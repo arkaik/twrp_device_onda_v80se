@@ -22,10 +22,10 @@ jobs:
                 path: device/onda/v80se
             - name: Setup build environment, lunch and make
               run: |
-                chsh --shell /bin/bash $(whoami)
                 . build/envsetup.sh
                 lunch omni_v80se-eng
                 mka recoveryimage
+              shell: bash
             - name: Upload recovery image
               uses: actions/upload-artifact@v2
               with:
