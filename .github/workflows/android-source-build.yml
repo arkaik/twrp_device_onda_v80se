@@ -14,7 +14,7 @@ jobs:
                 mkdir ~/bin
                 PATH=~/bin:$PATH
                 curl https://storage.googleapis.com/git-repo-downloads/repo-1 > ~/bin/repo
-                chmod a+x /usr/local/bin/repo
+                chmod a+x ~/bin/repo
             - name: Create and access working directory
               run: |
                 mkdir minTWRPOmni51
