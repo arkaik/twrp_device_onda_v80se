@@ -17,8 +17,9 @@ jobs:
               run: |
                 mkdir minTWRPOmni51
                 cd minTWRPOmni51
-            - run: repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1
-            - run: repo sync -c -j4
+            - run: repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1
+            - name: Sincronizamos el repositorio con los metadatos seleccionados
+              run: repo sync -c -j$(nproc --all)
             - run: mkdir -p minTWRPOmni51/device/onda/v80se
             - name: Clone repository to its device folder
               uses: actions/checkout@v2
