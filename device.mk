@@ -10,5 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/kernel:kernel \
-    $(LOCAL_PATH)/recovery/root/etc/recovery.fstab:recovery.fstab
+    $(LOCAL_PATH)/recovery/root/etc/recovery.fstab:recovery.fstab \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir,root)
+    
    
