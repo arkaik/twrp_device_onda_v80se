@@ -17,20 +17,19 @@ jobs:
               run: |
                 mkdir minTWRPOmni51
                 cd minTWRPOmni51
+                mkdir -p minTWRPOmni51/device/onda
             - run: repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1
             - name: Sincronizamos el repositorio con los metadatos seleccionados
               run: repo sync -c -j$(nproc --all)
-            - run: mkdir -p minTWRPOmni51/device/onda
             - name: Clone repository to its device folder
               uses: actions/checkout@v2
               with:
                 path: minTWRPOmni51/device/onda/v80se
-            - name: Setup build environment
+            - name: Setup build environment, lunch and make
               run: |
-                ls -la
                 source build/envsetup.sh
-            - run: lunch omni_v80se-eng
-            - run: mka recoveryimage
+                lunch omni_v80se-eng
+                mka recoveryimage
             - name: Upload recovery image
               uses: actions/upload-artifact@v2
               with:
