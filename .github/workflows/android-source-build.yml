@@ -24,7 +24,7 @@ jobs:
               run: |
                 . build/envsetup.sh
                 lunch omni_v80se-eng
-                mka recoveryimage
+                mka recoveryimage -j$(nproc --all)
               shell: bash
             - name: Upload recovery image
               uses: actions/upload-artifact@v2
