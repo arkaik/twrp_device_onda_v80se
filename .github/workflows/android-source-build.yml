@@ -24,9 +24,11 @@ jobs:
             - name: Clone repository to its device folder
               uses: actions/checkout@v2
               with:
-                name: v80se
-                path: minTWRPOmni51/device/onda
-            - run: source build/envsetup.sh
+                path: minTWRPOmni51/device/onda/v80se
+            - name: Setup build environment
+              run: |
+                ls -la
+                source build/envsetup.sh
             - run: lunch omni_v80se-eng
             - run: mka recoveryimage
             - name: Upload recovery image
