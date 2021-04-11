@@ -23,7 +23,7 @@ jobs:
             - name: Setup build environment, lunch and make
               run: |
                 chsh --shell /bin/bash $(whoami)
-                bash build/envsetup.sh
+                . build/envsetup.sh
                 lunch omni_v80se-eng
                 mka recoveryimage
             - name: Upload recovery image
