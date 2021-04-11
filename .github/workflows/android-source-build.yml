@@ -22,6 +22,7 @@ jobs:
                 path: device/onda/v80se
             - name: Setup build environment, lunch and make
               run: |
+                ls -la
                 bash build/envsetup.sh
                 lunch omni_v80se-eng
                 mka recoveryimage
