@@ -24,4 +24,11 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/modules/modules,root) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir,root)
     
-   
+#Configs
+PRODUCT_COPY_FILES += \
+    device/softwinner/tulip-chiphd/configs/camera.cfg:system/etc/camera.cfg \
+    device/softwinner/tulip-chiphd/configs/gsensor.cfg:system/usr/gsensor.cfg \
+    device/softwinner/tulip-chiphd/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/softwinner/tulip-chiphd/configs/sunxi-keyboard.kl:system/usr/keylayout/sunxi-keyboard.kl \
+    device/softwinner/tulip-chiphd/configs/sunxi_ir_recv.kl:system/usr/keylayout/sunxi_ir_recv.kl \
+    device/softwinner/tulip-chiphd/configs/tp.idc:system/usr/idc/tp.idc
