@@ -1,3 +1,4 @@
+$(call inherit-product-if-exists, $(LOCAL_PATH)/tools/tools.mk)
 $(call inherit-product-if-exists, $(LOCAL_PATH)/modules/modules.mk)
 
 #EGL
