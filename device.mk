@@ -21,6 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/kernel:kernel \
     $(LOCAL_PATH)/recovery/root/etc/recovery.fstab:recovery.fstab \
+    $(LOCAL_PATH)/init_parttion.sh:root/sbin/init_parttion.sh \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/modules/modules,root) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir,root)
     
