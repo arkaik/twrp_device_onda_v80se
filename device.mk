@@ -17,7 +17,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
     
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=160
+    ro.sf.lcd_density=160 \
+    ro.opengles.version=131072 \
+    ro.sys.cputype=QuadCore-A64 \
+    debug.hwui.render_dirty_regions=false
+    
+PRODUCT_CHARACTERISTICS := 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/kernel:kernel \
