@@ -32,12 +32,15 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80000
 
 #Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := exdroid
+TARGET_NO_RECOVERY := false
+TARGET_NO_KERNEL := false
 
 #Platform
 TARGET_BOARD_PLATFORM := tulip
 TARGET_USE_NEON_OPTIMIZATION := true
 
 #Recovery
+TARGET_RECOVERY_UI_LIB := librecovery_ui_tulip_chiphd
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 SW_BOARD_TOUCH_RECOVERY := true
@@ -50,7 +53,8 @@ USE_OPENGL_RENDERER := true
 TARGET_OTA_ASSERT_DEVICE = v80se,v80_se,v80
 
 #TWRP
-TW_THEME := portrait_hdpi
+TW_THEME := landscape_hdpi
+TW_HAS_NO_BOOT_PARTITION := true
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
